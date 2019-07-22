@@ -105,6 +105,9 @@ func IsNodeInfoSimilar(n1, n2 *schedulercache.NodeInfo) bool {
 			if label == kubeletapis.LabelZoneRegion {
 				continue
 			}
+			if label == "kops.k8s.io/instancegroup" {
+				continue
+			}
 			labels[label] = append(labels[label], value)
 		}
 	}
